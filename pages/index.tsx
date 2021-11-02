@@ -4,6 +4,9 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import Projects from '../components/Projects';
+import Bio from '../components/Bio';
+import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
   return (
@@ -11,16 +14,13 @@ const Home: NextPage = () => {
       <Head>
         
       </Head>
-
       <Header />
-
       <main className={styles.main}>
         <Hero />
+        <Projects />
+        <Bio />
       </main>
-
-      <footer className={styles.footer}>
-        
-      </footer>
+      <Footer />
     </div>
   )
 }
