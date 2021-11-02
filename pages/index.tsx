@@ -10,7 +10,7 @@ import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.Container}>
       <Head>
         
       </Head>

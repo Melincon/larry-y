@@ -1,0 +1,13 @@
+.Header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 1.5%;
+    padding-right: 13%;
+    padding-left: 13%;
+    padding-bottom: 1.5%;
+}
+
+.Header__siteTitle {
+    
+}
