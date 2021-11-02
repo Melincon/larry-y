@@ -7,19 +7,13 @@ export interface NavProps {}
 const Nav: FC<NavProps> = () => (
     <nav className={styles.Nav}>
         <NavItem>
-            Home
-        </NavItem>
-        <NavItem>
             Resume
         </NavItem>
         <NavItem>
-            Projects
+            Email
         </NavItem>
         <NavItem>
-            Bio
-        </NavItem>
-        <NavItem>
-            Contact
+            Linkedin
         </NavItem>
     </nav>
 )

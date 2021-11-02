@@ -6,7 +6,7 @@ export interface BioProps {}
 
 const Bio: FC<BioProps> = () => (
     <div className={styles.Bio}>
-        <Image src="/headshot.jpg" alt="Lawrence Yip" height={452} width={300}  />
+        <Image className={styles.Bio__image} src="/headshot.jpg" alt="Lawrence Yip" height={345} width={300}  />
         <div className={styles.Bio__text}>
             <h3 className={styles.Bio__title}>
                 Bio
