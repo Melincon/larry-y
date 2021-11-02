@@ -9,7 +9,7 @@ const Projects: FC<ProjectsProps> = () => (
             Projects
         </h3>
         <div className={styles.Projects__cards}>
-
+            
         </div>
     </div>
 )
