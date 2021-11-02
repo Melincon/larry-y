@@ -1,5 +1,10 @@
 .Hero {
-    height: 20vh;
-    background-color:lightskyblue;
-    opacity: 13%;
+    background-color: rgba(102, 178, 255, 0.2);
+    display: block;
+}
+
+.Hero__text {
+   margin-left: 23rem;
+   padding: 1rem;
+
 }

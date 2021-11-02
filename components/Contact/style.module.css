@@ -1,0 +1,14 @@
+.Contact {
+    background-color: rgba(46, 46, 248, 0.788);
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
+.Contact__text {
+    text-align: center;
+    color: white;
+}
+
+.Contact__socialLink {
+    margin-left: 2rem;;
+}

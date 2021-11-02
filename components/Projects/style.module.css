@@ -1,0 +1,8 @@
+.Projects {
+    text-align: center;
+}
+
+.Projects__cards {
+    min-height: 60vh;
+    width: 100%;
+}
