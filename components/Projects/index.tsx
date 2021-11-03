@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styles from './style.module.css';
-
+import ProjectCard from '../ProjectCard';
 export interface ProjectsProps {
     projects: any[];
 }
@@ -11,8 +11,8 @@ const Projects: FC<ProjectsProps> = ({ projects }) => (
             Projects
         </h3>
         <div className={styles.Projects__cards}>
-            {projects.map(projects => (
-                <img src={projects.bgImage} />
+            {projects.map(project => (
+                <ProjectCard project={project} />
             ))}
         </div>
     </div>
