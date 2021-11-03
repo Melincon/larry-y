@@ -1,10 +1,45 @@
-import fc from 'fs';
+import fs from 'fs';
 import { join } from 'path';
-import mater from 'gray-matter';
+import matter from 'gray-matter';
 
-// const postsDirectory = join(process.cwd(), '_posts')
-console.log(process.cwd())
+const projectsDirectory = join(process.cwd(), '_projects')
+
+export function getProjectSlugs() {
+    return fs.readdirSync(projectsDirectory)
+}
+
+export function getProjectBySlug(slug: string, fields = []) {
+  const realSlug = slug.replace(/\.md$/, '')
+  const fullPath = join(projectsDirectory, `${realSlug}.md`)
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  console.log(fileContents);
+  const { data, content } = matter(fileContents)
+
+  const items = {}
+
+  // Ensure only the minimal needed data is exposed
+  fields.forEach((field) => {
+    if (field === 'slug') {
+      items[field] = realSlug
+    }
+    if (field === 'content') {
+      items[field] = content
+    }
+
+    if (typeof data[field] !== 'undefined') {
+      items[field] = data[field]
+    }
+  })
+
+  return items
+}
 
 export function getAllProjects(fields: string[] = []) {
-    const projects = null;
+    const slugs = getProjectSlugs()
+    const projects = slugs
+        .map((slug) => getProjectBySlug(slug, fields))
+        // sort posts by date in descending order
+        .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+    console.log(projects);
+    return projects
 }
