@@ -1,5 +1,8 @@
 .Projects {
     text-align: center;
+    width: 60%;
+    display: block;
+    margin: auto;
 }
 
 .Projects__cards {
