@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import fs from 'fs';
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -7,8 +8,11 @@ import Hero from '../components/Hero';
 import Projects from '../components/Projects';
 import Bio from '../components/Bio';
 import Contact from '../components/Contact'
+import { getAllProjects } from '../lib/api';
 
-const Home: NextPage = () => {
+export interface HomeProps {}
+
+const Home: NextPage<HomeProps> = () => {
   return (
     <div className={styles.Container}>
       <Head>
@@ -26,3 +30,13 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+export async function getStaticProps() {
+  const projects = getAllProjects();
+
+  return {
+    props: {
+      projects: projects
+    }
+  }
+}
