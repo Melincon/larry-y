@@ -32,7 +32,7 @@ const Home: NextPage<HomeProps> = () => {
 export default Home
 
 export async function getStaticProps() {
-  const projects = getAllProjects();
+  const projects = getAllProjects(['slug','content']);
 
   return {
     props: {
