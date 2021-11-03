@@ -2,7 +2,7 @@
 title: Gizmo 4 President! AR
 slug: gizmo
 data: 2020-01-15
-bgImage: public/Gizmo_4_President_Thumbnail.png
+bgImage: /Gizmo_4_President_Thumbnail.png
 ---
 Mobile AR app adaptation of a children's book promoting reading and ocean conservation
 
