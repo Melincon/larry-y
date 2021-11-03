@@ -1,14 +1,12 @@
 import type { NextPage } from 'next'
-import fs from 'fs';
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Projects from '../components/Projects';
 import Bio from '../components/Bio';
-import Contact from '../components/Contact'
 import { getAllProjects } from '../lib/api';
+import markdownToHtml from '../lib/markdownToHtml';
 
 export interface HomeProps {}
 
@@ -23,7 +21,6 @@ const Home: NextPage<HomeProps> = () => {
         <Hero />
         <Projects />
         <Bio />
-        <Contact />
       </main>
     </div>
   )
@@ -32,8 +29,11 @@ const Home: NextPage<HomeProps> = () => {
 export default Home
 
 export async function getStaticProps() {
-  const projects = getAllProjects(['slug','content']);
-
+  let projects = getAllProjects(['slug','content']);
+  projects.map(async project => {
+    project.content = await markdownToHtml(project.content)
+    return project
+  })
   return {
     props: {
       projects: projects
