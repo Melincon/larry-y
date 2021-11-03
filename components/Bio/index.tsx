@@ -1,12 +1,11 @@
 import { FC } from 'react';
 import styles from './style.module.css';
-import Image from 'next/image';
 
 export interface BioProps {}
 
 const Bio: FC<BioProps> = () => (
     <div className={styles.Bio}>
-        <Image className={styles.Bio__image} src="/headshot.jpg" alt="Lawrence Yip" height={345} width={300}  />
+        <img className={styles.Bio__image} src="/headshot.jpg" alt="Lawrence Yip" />
         <div className={styles.Bio__text}>
             <h3 className={styles.Bio__title}>
                 Bio

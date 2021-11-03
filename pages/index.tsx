@@ -8,9 +8,11 @@ import Bio from '../components/Bio';
 import { getAllProjects } from '../lib/api';
 import markdownToHtml from '../lib/markdownToHtml';
 
-export interface HomeProps {}
+export interface HomeProps {
+  projects: any[];
+}
 
-const Home: NextPage<HomeProps> = () => {
+const Home: NextPage<HomeProps> = ({ projects }) => {
   return (
     <div className={styles.Container}>
       <Head>
@@ -19,7 +21,7 @@ const Home: NextPage<HomeProps> = () => {
       <Header />
       <main className={styles.main}>
         <Hero />
-        <Projects />
+        <Projects projects={projects} />
         <Bio />
       </main>
     </div>
@@ -29,7 +31,7 @@ const Home: NextPage<HomeProps> = () => {
 export default Home
 
 export async function getStaticProps() {
-  let projects = getAllProjects(['slug','content']);
+  let projects = getAllProjects(['slug','content','bgImage']);
   projects.map(async project => {
     project.content = await markdownToHtml(project.content)
     return project
