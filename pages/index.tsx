@@ -19,7 +19,7 @@ const Home: NextPage<HomeProps> = ({ projects }) => {
         
       </Head>
       <Header />
-      <main className={styles.main}>
+      <main className={styles.Main}>
         <Hero />
         <Projects projects={projects} />
         <Bio />
@@ -32,10 +32,7 @@ export default Home
 
 export async function getStaticProps() {
   let projects = getAllProjects(['slug','content','bgImage']);
-  projects.map(async project => {
-    project.content = await markdownToHtml(project.content)
-    return project
-  })
+  
   return {
     props: {
       projects: projects

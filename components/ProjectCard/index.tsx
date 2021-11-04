@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import styles from './style.module.css';
+import Image from 'next/image';
 
 export interface ProjectCardProps {
     project: any;
@@ -12,10 +13,10 @@ const ProjectCard: FC<ProjectCardProps> = ({ project }) => {
     }
     return (
         <div className={styles.ProjectCard}>
-            <img onClick={handleClick} className={styles.ProjectCard__bgImage} src={project.bgImage} />
+            <Image onClick={handleClick} className={styles.ProjectCard__bgImage} src={project.bgImage} height={1280} width={1920} />
             {showProjectDetails && (
                 <div className={styles.ProjectCard__projectDetails}>
-                    testing
+                    {project.content}
                 </div>
             )}
         </div>

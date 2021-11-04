@@ -1,4 +1,7 @@
 .Header {
+    z-index: 2;
+    background-color: rgba(189, 195, 199, 1);
+    position: fixed;
     display: flex;
     width: 100%;
     justify-content: space-between;
