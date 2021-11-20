@@ -6,7 +6,6 @@ import Hero from '../components/Hero';
 import Projects from '../components/Projects';
 import Bio from '../components/Bio';
 import { getAllProjects } from '../lib/api';
-import markdownToHtml from '../lib/markdownToHtml';
 
 export interface HomeProps {
   projects: any[];
